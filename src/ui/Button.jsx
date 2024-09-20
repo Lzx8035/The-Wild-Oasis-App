@@ -1,5 +1,8 @@
 import styled, { css } from "styled-components";
 
+// use css function to get syntax highlighting
+
+//
 const sizes = {
   small: css`
     font-size: 1.2rem;
@@ -26,6 +29,7 @@ const variations = {
     background-color: var(--color-brand-600);
 
     &:hover {
+      //!!!
       background-color: var(--color-brand-700);
     }
   `,
@@ -47,3 +51,19 @@ const variations = {
     }
   `,
 };
+
+const Button = styled.button`
+  border: none;
+  border-radius: var(--border-radius-sm);
+  box-shadow: var(--shadow-sm);
+
+  ${(props) => sizes[props.size]} // use props in a call back fn
+  ${(props) => variations[props.variation]}
+`;
+
+Button.defaultProps = {
+  variation: "primary",
+  size: "medium",
+};
+
+export default Button;
