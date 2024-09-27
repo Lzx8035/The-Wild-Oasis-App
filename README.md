@@ -48,7 +48,19 @@
 
 👉 UI State management Context API
 
-👉 Remote state management: React Query
+👉 Remote state management: **React Query**
+
+with React Quer there is many features that allow us to write a lot less code,
+while also making the UX a lot better:/
+Data is stored in a cache/
+Automatic loading and error states/
+Automatic re-fetching to keep state synched, eg.timeout/
+Pre-fetching, eg.pagnation/
+Easy remote state mutation (updating)/
+Offline support/
+
+React Query v5, there are only two small things to change in the project:
+isLoading is now called isPending and the cacheTime option is now called gcTime
 
 👉 Form management: React Hook Form
 
