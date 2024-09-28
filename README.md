@@ -64,7 +64,9 @@ Offline support
 React Query v5, there are only two small things to change in the project:
 isLoading is now called isPending and the cacheTime option is now called gcTime
 
-👉 Form management: React Hook Form
+👉 Form management: **React Hook Form**
+
+### React Hook Form
 
 👉 Other tools: React icons / React hot toast / Recharts / date-fns / **Supabase**
 

@@ -57,13 +57,15 @@ const Button = styled.button`
   border-radius: var(--border-radius-sm);
   box-shadow: var(--shadow-sm);
 
-  ${(props) => sizes[props.size]} // use props in a call back fn
-  ${(props) => variations[props.variation]}
+  ${(props) => sizes[props.$size]} // use props in a call back fn
+  ${(props) => variations[props.$variation]}
 `;
 
+// add a "$" sign in front of the custom props in the button declaration and in the default props. Then the error will not occur anymore.
+
 Button.defaultProps = {
-  variation: "primary",
-  size: "medium",
+  $variation: "primary",
+  $size: "medium",
 };
 
 export default Button;
