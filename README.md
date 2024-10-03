@@ -50,7 +50,7 @@
 
 👉 Remote state management: **React Query**
 
-### React Query
+### React Query: CRUD
 
 with React Quer there is many features that allow us to write a lot less code,
 while also making the UX a lot better:\
