@@ -1,4 +1,4 @@
-# New Project
+# This is my new project(Still working on it...)
 
 ## PROJECT REQUIREMENTS FROM THE BUSINESS
 
