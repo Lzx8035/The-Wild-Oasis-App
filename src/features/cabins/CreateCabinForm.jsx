@@ -1,18 +1,19 @@
 import { useForm } from "react-hook-form";
 
+import useEditCabin from "./useEditCabin";
+import useCreateCabin from "./useCreateCabin";
+
 import Input from "../../ui/Input";
 import Form from "../../ui/Form";
 import Button from "../../ui/Button";
 import FileInput from "../../ui/FileInput";
 import Textarea from "../../ui/Textarea";
 import FormRow from "../../ui/FormRow";
-import useCreateCabin from "./useCreateCabin";
-import useEditCabin from "./useEditCabin";
 
 function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
-  const { id: editedId, ...editValues } = cabinToEdit;
+  const { id: editId, ...editValues } = cabinToEdit;
 
-  const isEditForm = Boolean(editedId);
+  const isEditForm = Boolean(editId);
 
   const { register, handleSubmit, reset, getValues, formState } = useForm({
     defaultValues: isEditForm ? editValues : {},
@@ -46,16 +47,15 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
   const isSubmitting = isCreating || isEditing;
 
   function onSubmit(data) {
-    // console.log(data);
+    console.log(data);
 
     const image = typeof data.image === "string" ? data.image : data.image[0];
 
     if (isEditForm) {
       editCabin(
-        { newCabin: { ...data, image }, id: editedId },
+        { newCabin: { ...data, image }, id: editId },
         {
           onSuccess: (data) => {
-            // console.log(data);
             reset(data); // Fixed
             onCloseModal?.();
           },
@@ -65,9 +65,7 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
       createCabin(
         { ...data, image },
         {
-          onSuccess: (data) => {
-            // !!!
-            // console.log(data);
+          onSuccess: () => {
             reset();
             onCloseModal?.();
           },
@@ -77,7 +75,7 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
   }
 
   function onError(err) {
-    console.err(err);
+    console.error(err);
   }
 
   return (
