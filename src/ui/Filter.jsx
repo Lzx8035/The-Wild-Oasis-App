@@ -52,7 +52,7 @@ function Filter({ filterField, filterOptions }) {
         <FilterButton
           onClick={() => handleClick(option.value)}
           key={option.value}
-          active={(currentFilter === option.value).toString()}
+          active={currentFilter === option.value ? "true" : ""}
         >
           {option.label}
         </FilterButton>
