@@ -87,7 +87,7 @@ function Row({ children }) {
   );
 }
 function Body({ data, render }) {
-  if (!data.length) return <empty>No Data</empty>;
+  if (!data.length) return <Empty>No Data</Empty>;
   return <StyledBody>{data.map(render)}</StyledBody>;
 }
 
