@@ -1,14 +1,23 @@
 import { getToday } from "../utils/helpers";
 import supabase from "./supabase";
 
-export async function getBookings() {
-  const { data, error } = await supabase
+export async function getBookings({ filter, sorter }) {
+  let query = supabase
     .from("bookings")
     // .select("*, cabins(*), guests(*)"); // !!!
     .select(
-      "id, created_at, startDate, endDate, numNights, numGuests, status, totalPrice, cabins(name), guests(fullName, email)",
-      { count: "exact" }
+      "id, created_at, startDate, endDate, numNights, numGuests, status, totalPrice, cabins(name), guests(fullName, email)"
     );
+  // .eq("status", "unconfirmed") // !!! hard coded not what we want
+  // .gte("totalPrice", 5000);
+
+  // Filter
+  if (filter) query.eq(filter.field, filter.value);
+  // Sorter
+  if (sorter)
+    query.order(sorter.field, { ascending: sorter.direction === "asc" });
+
+  const { data, error } = await query;
 
   if (error) {
     console.error(error);
