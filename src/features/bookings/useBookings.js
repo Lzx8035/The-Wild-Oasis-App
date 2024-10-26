@@ -18,14 +18,18 @@ export default function useBookings() {
   const [field, direction] = sortByOption.split("-");
   const sorter = !sortByOption ? null : { field, direction };
 
+  // Pagination
+  const page =
+    searchParams.get("page") === null ? 1 : Number(searchParams.get("page"));
+
   const {
     isLoading,
-    data: bookings,
+    data: { data: bookings, count } = {}, // !!!
     error,
   } = useQuery({
-    queryKey: ["bookinga", filter, sorter], // Filter
-    queryFn: () => getBookings({ filter, sorter }),
+    queryKey: ["bookings", filter, sorter, page], // Filter
+    queryFn: () => getBookings({ filter, sorter, page }),
   });
 
-  return { isLoading, error, bookings };
+  return { isLoading, error, bookings, count };
 }
