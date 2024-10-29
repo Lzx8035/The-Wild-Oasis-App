@@ -43,6 +43,10 @@ function Filter({ filterField, filterOptions }) {
   function handleClick(value) {
     //!!!
     searchParams.set(filterField, value);
+
+    // Fix BUG
+    if (searchParams.get("page")) searchParams.set("page", 1);
+
     setSearchParams(searchParams);
   }
 
