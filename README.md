@@ -1,5 +1,7 @@
 # This is my new project(Still working on it...)
 
+🔗：https://lea-wild-oasis-project.vercel.app/dashboard
+
 ## PROJECT REQUIREMENTS FROM THE BUSINESS
 
 👉 Users of the app are hotel employees. They need to be logged into the application to perform tasks
@@ -84,3 +86,9 @@ can easily request and receive data from the server
 
 👉 Not just an API: Supabase also comes with easy-
 to-use user authentication and file storage
+
+TODO:
+create booking
+PDF mail to the user
+set different price
+bill for food
