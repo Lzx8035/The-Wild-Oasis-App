@@ -1,6 +1,6 @@
 # This is my new project(Still working on it...)
 
-🔗：https://lea-wild-oasis-project.vercel.app/dashboard
+🔗：https://lea-wild-oasis-project.vercel.app
 
 ## PROJECT REQUIREMENTS FROM THE BUSINESS
 
