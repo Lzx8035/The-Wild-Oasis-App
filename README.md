@@ -1,94 +1,44 @@
-# This is my new project(Still working on it...)
+# Wild Oasis Hotel Management Platform
 
-🔗：https://lea-wild-oasis-project.vercel.app
+A comprehensive hotel management system for staff to handle bookings, check-ins/outs, and track business metrics.
 
-## PROJECT REQUIREMENTS FROM THE BUSINESS
+[Live Demo](https://lea-wild-oasis-project.vercel.app)
 
-👉 Users of the app are hotel employees. They need to be logged into the application to perform tasks
+## Features
 
-👉 New users can only be signed up inside the applications (to guarantee that only actual hotel employees can get accounts)
+🏨 Hotel Management
 
-👉 Users should be able to upload an avatar, and change their name and password
+- Cabin management with photo upload and pricing
+- Booking status tracking
+- Guest check-in and payment processing
+- Breakfast service management
 
-👉 App needs a table view with all cabins, showing the cabin photo, name, capacity, price, and current discount
+📊 Dashboard & Analytics
 
-👉 Users should be able to update or delete a cabin, and to create new cabins (including uploading a photo)
+- Daily check-in/out overview
+- Sales and occupancy statistics
+- Interactive charts for bookings and revenue
+- Stay duration analytics
 
-👉 App needs a table view with all bookings, showing arrival and departure dates, status, and paid amount, as well as cabin and guest data
+⚙️ System Features
 
-👉 The booking status can be “unconfirmed” (booked but not yet checked in), “checked in”, or “checked out”. The table should be filterable by this important status
+- Staff account management
+- Dark mode support
+- Application settings configuration
+- Profile customization
 
-👉 Other booking data includes: number of guests, number of nights, guest observations, whether they booked breakfast, breakfast price
+## Tech Stack
 
-👉 Users should be able to delete, check in, or check out a booking as the guest arrives (no editing necessary for now)
+- React.js
+- React Query for data management
+- Styled Components for styling
+- React Hook Form for form handling
+- Recharts for data visualization
+- Supabase for backend services
+- React Router for navigation
 
-👉 Bookings may not have been paid yet on guest arrival. Therefore, on check in, users need to accept payment (outside the app), and then confirm that payment has been received (inside the app)
+## Future Updates
 
-👉 On check in, the guest should have the ability to add breakfast for the entire stay, if they hadn’t already
-
-👉 Guest data should contain: full name, email, national ID, nationality, and a country flag for easy identification
-
-👉 The initial app screen should be a dashboard, to display important information for the last 7, 30, or 90 days
-
-👉 A list of guests checking in and out on the current day. Users should be able to perform these tasks from here
-
-👉 Statistics on recent bookings, sales, check ins, and occupancy rate
-
-👉 A chart showing all daily hotel sales, showing both “total” sales and “extras” sales (only breakfast at the moment)
-
-👉 A chart showing statistics on stay durations, as this is an important metric for the hotel
-
-👉 Users should be able to define a few application-wide settings: breakfast price, min and max nights/booking, max guests/booking
-
-👉 App needs a dark mode
-
-## TECHNOLOGY DECISIONS
-
-👉 Routing: React Router
-
-👉 Styling: Styled Component
-
-👉 UI State management Context API
-
-👉 Remote state management: **React Query**
-
-### React Query: CRUD
-
-with React Quer there is many features that allow us to write a lot less code,
-while also making the UX a lot better:\
-Data is stored in a cache\
-Automatic loading and error states\
-Automatic re-fetching to keep state synched, eg.timeout\
-Pre-fetching, eg.pagnation\
-Easy remote state mutation (updating)\
-Offline support
-
-React Query v5, there are only two small things to change in the project:
-isLoading is now called isPending and the cacheTime option is now called gcTime
-
-👉 Form management: **React Hook Form**
-
-### React Hook Form
-
-👉 Other tools: React icons / React hot toast / Recharts / date-fns / **Supabase**
-
-### Supabase
-
-👉 Service that allows developers to easily create a
-back-end with a Postgres database
-
-👉 Automatically creates a database and API so we
-can easily request and receive data from the server
-
-👉 No back-end development needed 🥳
-
-👉 Perfect to get up and running quickly!
-
-👉 Not just an API: Supabase also comes with easy-
-to-use user authentication and file storage
-
-TODO:
-create booking
-PDF mail to the user
-set different price
-bill for food
+- PDF generation for bookings
+- Email notifications
+- Custom billing for services
